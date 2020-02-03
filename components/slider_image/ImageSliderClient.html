@@ -1,0 +1,87 @@
+<definition>
+    {
+      id:"image_slider",
+      label:"Image Slider",
+      className:"ImageSliderServer",
+      renderable:"true"
+    }
+</definition>
+
+<attributes>
+    [
+        {
+            name: "bucket",
+            label: "Bucket",
+            type: "choice",
+            attributes: {
+                "choice_type": "dropdown",
+                "buckets": "true",
+                "none_option": "true"
+            }
+        },{
+            name: "suffix",
+            label: "Suffix",
+            type: "choice",
+            attributes: {
+                           "choice_type": "dropdown",
+                           "default": "png",
+                           "choices": [
+                        { label: 'All images', value: 'all' },
+                        { label: 'PNG', value: 'png' },
+                        { label: 'JPG', value: 'jpg' },
+                        { label: 'GIF', value: 'gif' },
+                ]
+            }
+        }
+    ]
+</attributes>
+
+<attributes_layout>
+	[ "bucket", "suffix" ]
+</attributes_layout>
+
+<attributes_display_rules>
+    [
+        {
+            "slot": "bucket",
+            "conditions": {
+                "mandatory": []
+            }
+        },{
+            "slot": "suffix",
+            "conditions": {
+                "hidden": ["bucket","eq",""]
+            }
+        }
+    ]
+</attributes_display_rules>
+
+<script>
+	exports.component = ComponentUI.create({
+		onRender: function(container, data, attributes) {
+			var w = container.width();
+			var h = container.height() || 400;
+			this.id = 'uniqueImageSliderID' + Client.guid();
+ 			var primaryDiv = $('<div id="' + this.id + '"></div>');
+
+			for(var i = 0; i < data.urls.length; i++) {
+				var urlVar = data.urls[i];
+				primaryDiv.append('<img src="' + urlVar + '" alt="">');
+			}
+
+			container.append(primaryDiv);
+
+			this.slider = new IdealImageSlider.Slider('#' + this.id);
+			this.slider.addBulletNav();
+			this.slider.start();
+			
+		},
+
+		onUnloaded: function() {
+			this.slider.destroy();
+			this.slider = undefined;
+		},
+
+		className: "ImageSliderClient"
+	});
+</script>

@@ -5,42 +5,30 @@
         "created": "1580798577044",
         "id": "1f067ab598734bc2965a530bc7d6a375",
         "layout": {
-          "config": {
-            "desktop": {
-              "label": "Desktop"
-            }
+          "__start__": {
+            "contains": [
+              "component_c6ca3c47c9e5b89e481d601a744b7333"
+            ],
+            "h": "100%",
+            "id": "__start__",
+            "layout_type": "page_components",
+            "type": "container",
+            "w": "100%"
           },
-          "layouts": {
-            "desktop": {
-              "__start__": {
-                "contains": [
-                  "component_adb44f6f09466a50f1ec4d9d15c6be50"
-                ],
-                "h": "100%",
-                "id": "__start__",
-                "layout_type": "page_components",
-                "type": "container",
-                "w": "100%"
-              },
-              "component_adb44f6f09466a50f1ec4d9d15c6be50": {
-                "attributes": {
-                  "component": "image_slider",
-                  "csstags": ""
-                },
-                "component": "image_slider",
-                "h": "100%",
-                "id": "component_adb44f6f09466a50f1ec4d9d15c6be50",
-                "name": "component_adb44f6f09466a50f1ec4d9d15c6be50",
-                "needs_subpage_target": false,
-                "page_loading": false,
-                "type": "component",
-                "w": "100%"
-              }
-            }
-          },
-          "meta": {
-            "format": "multiple_layout",
-            "version": 1
+          "component_c6ca3c47c9e5b89e481d601a744b7333": {
+            "attributes": {
+              "component": "news_top",
+              "csstags": "",
+              "id": "12c0fd321b3e9f127e634c0ace2240b2"
+            },
+            "component": "news_top",
+            "h": "100%",
+            "id": "component_c6ca3c47c9e5b89e481d601a744b7333",
+            "name": "component_c6ca3c47c9e5b89e481d601a744b7333",
+            "needs_subpage_target": false,
+            "page_loading": false,
+            "type": "component",
+            "w": "100%"
           }
         },
         "meta_classification": "",

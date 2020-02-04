@@ -14,8 +14,7 @@
             "desktop": {
               "__start__": {
                 "contains": [
-                  "component_020a7218ddf7acb77ed05015f17a7104",
-                  "component_a2a16f53fc5979cb450a77d56e27a774"
+                  "component_ccdcd41e7c44b69e72533ba74daaedd6"
                 ],
                 "h": "100%",
                 "id": "__start__",
@@ -23,30 +22,15 @@
                 "type": "container",
                 "w": "100%"
               },
-              "component_020a7218ddf7acb77ed05015f17a7104": {
+              "component_ccdcd41e7c44b69e72533ba74daaedd6": {
                 "attributes": {
-                  "component": "image_slider",
-                  "csstags": "",
-                  "id": "fcd4d065a2a8154113dcb17bdc3535d3"
-                },
-                "component": "image_slider",
-                "h": "50%",
-                "id": "component_020a7218ddf7acb77ed05015f17a7104",
-                "name": "component_020a7218ddf7acb77ed05015f17a7104",
-                "needs_subpage_target": false,
-                "page_loading": false,
-                "type": "component",
-                "w": "100%"
-              },
-              "component_a2a16f53fc5979cb450a77d56e27a774": {
-                "attributes": {
-                  "component": "image_slider",
+                  "component": "test component",
                   "csstags": ""
                 },
-                "component": "image_slider",
-                "h": "50%",
-                "id": "component_a2a16f53fc5979cb450a77d56e27a774",
-                "name": "component_a2a16f53fc5979cb450a77d56e27a774",
+                "component": "test component",
+                "h": "100%",
+                "id": "component_ccdcd41e7c44b69e72533ba74daaedd6",
+                "name": "component_ccdcd41e7c44b69e72533ba74daaedd6",
                 "needs_subpage_target": false,
                 "page_loading": false,
                 "type": "component",

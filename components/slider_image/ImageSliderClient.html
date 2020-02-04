@@ -8,87 +8,37 @@
 </definition>
 
 <style>
-    .image_viewer {
+    .wrapper {
         width: 100%;
-        height: 500px;
+        margin: 20px 0;
+        padding: 0 30px;
+    }
+    h2 {
+        padding: 10px 30px;
     }
 </style>
 
-<attributes>
-    [
-        {
-            name: "bucket",
-            label: "Bucket",
-            type: "choice",
-            attributes: {
-                "choice_type": "dropdown",
-                "buckets": "true",
-                "none_option": "true"
-            }
-        },{
-            name: "suffix",
-            label: "Suffix",
-            type: "choice",
-            attributes: {
-                           "choice_type": "dropdown",
-                           "default": "png",
-                           "choices": [
-                        { label: 'All images', value: 'all' },
-                        { label: 'PNG', value: 'png' },
-                        { label: 'JPG', value: 'jpg' },
-                        { label: 'GIF', value: 'gif' },
-                ]
-            }
-        }
-    ]
-</attributes>
+<attributes> [] </attributes>
 
-<attributes_layout>
-	[ "bucket", "suffix" ]
-</attributes_layout>
+<attributes_layout> [] </attributes_layout>
 
-<attributes_display_rules>
-    [
-        {
-            "slot": "bucket",
-            "conditions": {
-                "mandatory": []
-            }
-        },{
-            "slot": "suffix",
-            "conditions": {
-                "hidden": ["bucket","eq",""]
-            }
-        }
-    ]
-</attributes_display_rules>
+<attributes_display_rules> [] </attributes_display_rules>
+
+<template name="test.container">
+    <h2>
+      List Images
+    </h2>
+    <div class="wrapper">
+      <p>List</p>
+    </div>
+  </template>
 
 <script>
 	exports.component = ComponentUI.create({
-		onRender: function(container, data, attributes) {
-			var w = container.width();
-			var h = container.height() || 400;
-			this.id = 'uniqueImageSliderID' + Client.guid();
- 			var primaryDiv = $('<div id="' + this.id + '"></div>');
-
-			for(var i = 0; i < data.urls.length; i++) {
-				var urlVar = data.urls[i];
-				primaryDiv.append('<img src="' + urlVar + '" alt="">');
-			}
-
-			container.append(primaryDiv);
-
-			this.slider = new IdealImageSlider.Slider('#' + this.id);
-			this.slider.addBulletNav();
-			this.slider.start();
-			
-		},
-
-		onUnloaded: function() {
-			this.slider.destroy();
-			this.slider = undefined;
-		},
-
+		onRender: function(data) {
+			this.template('test.container', this.container, data, this.attributes);
+        },
+        
 		className: "ImageSliderClient"
 	});
 </script>

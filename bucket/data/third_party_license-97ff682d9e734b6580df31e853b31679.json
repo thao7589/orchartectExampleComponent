@@ -1,0 +1,19 @@
+{
+  "bucket_data": {
+    "third_party_license": {
+      "97ff682d9e734b6580df31e853b31679": {
+        "created": "1580806782055",
+        "id": "97ff682d9e734b6580df31e853b31679",
+        "license": "",
+        "meta_classification": "",
+        "meta_datatag": "",
+        "meta_schema": "",
+        "name": "",
+        "owner": "09c051b36fc045368af79052b4131759",
+        "schema_version": "0.0",
+        "system_updated": "0",
+        "version": ""
+      }
+    }
+  }
+}

@@ -5,30 +5,58 @@
         "created": "1580802721339",
         "id": "7e265db0eacd4e5cafeb26f321281a8d",
         "layout": {
-          "__start__": {
-            "contains": [
-              "component_6e816a56bdcaf746736aa53d85a8b573"
-            ],
-            "h": "100%",
-            "id": "__start__",
-            "layout_type": "page_components",
-            "type": "container",
-            "w": "100%"
+          "config": {
+            "desktop": {
+              "label": "Desktop"
+            }
           },
-          "component_6e816a56bdcaf746736aa53d85a8b573": {
-            "attributes": {
-              "component": "image_slider",
-              "csstags": "",
-              "id": "6d05481543b32c6594bda301b33f13cb"
-            },
-            "component": "image_slider",
-            "h": "100%",
-            "id": "component_6e816a56bdcaf746736aa53d85a8b573",
-            "name": "component_6e816a56bdcaf746736aa53d85a8b573",
-            "needs_subpage_target": false,
-            "page_loading": false,
-            "type": "component",
-            "w": "100%"
+          "layouts": {
+            "desktop": {
+              "__start__": {
+                "contains": [
+                  "component_3ef1b9c990958ef1e007f134e8fed251"
+                ],
+                "h": "100%",
+                "id": "__start__",
+                "layout_type": "page_components",
+                "type": "container",
+                "w": "100%"
+              },
+              "component_3ef1b9c990958ef1e007f134e8fed251": {
+                "attributes": {
+                  "allow_sorting": "true",
+                  "bucket": "component_page",
+                  "component": "list",
+                  "csstags": "",
+                  "details_layout": "",
+                  "force_condition": "[]",
+                  "height": 300,
+                  "height_option": "",
+                  "inline_details": false,
+                  "list_spacing": "",
+                  "refresh_interval": 0,
+                  "show_subtenant_data": false,
+                  "skip_url_changes": false,
+                  "sort_descending": "0",
+                  "sort_slot": "",
+                  "title": "",
+                  "use_details": "false",
+                  "view": ""
+                },
+                "component": "list",
+                "h": "100%",
+                "id": "component_3ef1b9c990958ef1e007f134e8fed251",
+                "name": "component_3ef1b9c990958ef1e007f134e8fed251",
+                "needs_subpage_target": false,
+                "page_loading": false,
+                "type": "component",
+                "w": "100%"
+              }
+            }
+          },
+          "meta": {
+            "format": "multiple_layout",
+            "version": 1
           }
         },
         "meta_classification": "",

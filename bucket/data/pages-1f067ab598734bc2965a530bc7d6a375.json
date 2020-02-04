@@ -14,7 +14,7 @@
             "desktop": {
               "__start__": {
                 "contains": [
-                  "component_4e4adc90e806fd27ab773c32e86900fc"
+                  "component_52a8fe3a1b69cc7eff062076428ff988"
                 ],
                 "h": "100%",
                 "id": "__start__",
@@ -22,15 +22,20 @@
                 "type": "container",
                 "w": "100%"
               },
-              "component_4e4adc90e806fd27ab773c32e86900fc": {
+              "component_52a8fe3a1b69cc7eff062076428ff988": {
                 "attributes": {
-                  "component": "test component",
-                  "csstags": ""
+                  "__raw": {
+                    "article": "%{pageVars.article}"
+                  },
+                  "article": "%{pageVars.article}",
+                  "component": "documentation",
+                  "csstags": "",
+                  "default_article": ""
                 },
-                "component": "test component",
+                "component": "documentation",
                 "h": "100%",
-                "id": "component_4e4adc90e806fd27ab773c32e86900fc",
-                "name": "component_4e4adc90e806fd27ab773c32e86900fc",
+                "id": "component_52a8fe3a1b69cc7eff062076428ff988",
+                "name": "component_52a8fe3a1b69cc7eff062076428ff988",
                 "needs_subpage_target": false,
                 "page_loading": false,
                 "type": "component",
@@ -66,6 +71,10 @@
                     {
                       "name": "id",
                       "type": "slot"
+                    },
+                    {
+                      "name": "article",
+                      "type": "slot"
                     }
                   ]
                 ],
@@ -75,6 +84,15 @@
             "version": 1
           },
           "slots": {
+            "article": {
+              "attributes": { },
+              "labels": {
+                "label": "article",
+                "labelp": "article"
+              },
+              "name": "article",
+              "type": "string"
+            },
             "bucket": {
               "attributes": { },
               "labels": {

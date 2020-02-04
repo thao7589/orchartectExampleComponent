@@ -14,7 +14,7 @@
             "desktop": {
               "__start__": {
                 "contains": [
-                  "component_ccdcd41e7c44b69e72533ba74daaedd6"
+                  "component_4e4adc90e806fd27ab773c32e86900fc"
                 ],
                 "h": "100%",
                 "id": "__start__",
@@ -22,15 +22,15 @@
                 "type": "container",
                 "w": "100%"
               },
-              "component_ccdcd41e7c44b69e72533ba74daaedd6": {
+              "component_4e4adc90e806fd27ab773c32e86900fc": {
                 "attributes": {
                   "component": "test component",
                   "csstags": ""
                 },
                 "component": "test component",
                 "h": "100%",
-                "id": "component_ccdcd41e7c44b69e72533ba74daaedd6",
-                "name": "component_ccdcd41e7c44b69e72533ba74daaedd6",
+                "id": "component_4e4adc90e806fd27ab773c32e86900fc",
+                "name": "component_4e4adc90e806fd27ab773c32e86900fc",
                 "needs_subpage_target": false,
                 "page_loading": false,
                 "type": "component",

@@ -1,31 +1,144 @@
 <!DOCTYPE f8component>
+
 <definition>
-    {
-      id:"image_slider",
-      label:"Image Slider",
-      className:"ImageSliderServer",
-      renderable:"true"
-    }
+{
+  id:"image_slider",
+  label:"Image Slider",
+  className:"ImageSliderServer",
+  renderable: "true"
+}
 </definition>
 
-<attributes> [] </attributes>
+<attributes>
+[
+	{
+		name: "demo_mode",
+		label: "Demo mode",
+		type: "boolean",
+		attributes: {
+			default: false
+		}
+	},{
+		name: "bucket",
+		label: "Bucket",
+		type: "choice",
+		attributes: {
+			"choice_type": "dropdown",
+			"buckets": "true",
+			"none_option": true
+		}
+	},{
+		name: "suffix",
+		label: "Suffix",
+		type: "choice",
+		attributes: {
+                       "choice_type": "dropdown",
+                       "default": "png",
+                       "choices": [
+					{ label: 'All images', value: 'all' },
+					{ label: 'PNG', value: 'png' },
+					{ label: 'JPG', value: 'jpg' },
+					{ label: 'GIF', value: 'gif' }
+			]
+		}
+	}
+]
+</attributes>
 
-<attributes_layout> [] </attributes_layout>
+<attributes_layout>
+	[ "demo_mode", "bucket", "suffix" ]
+</attributes_layout>
 
-<attributes_display_rules> [] </attributes_display_rules>
+<attributes_display_rules>
+[
+	{
+		"slot": "bucket",
+		"conditions": {
+			"hidden": '[["demo_mode","eq","true"]]'
+		}
+	},{
+		"slot": "suffix",
+		"conditions": {
+			"hidden": '[[[["bucket","eq",""]],"OR",[["demo_mode","eq","true"]]]]'
+			
+		}
+	}
+]
+</attributes_display_rules>
 
-<template name="test.container">
-    <h2>
-      List Images
-    </h2>
-</template>
+<style>
+    .image_viewer {
+        width: 100%;
+        height: 500px;
+    }
+</style>
 
 <script>
+	var Guid = require('core/Guid');
+
 	exports.component = ComponentUI.create({
 		onLoad: function(data) {
-			this.template('test.container', this.container, data, this.attributes);
-        },
-        
+			var container = this.container;
+			var attributes = this.attributes;
+			
+			var w = container.width();
+			var h = container.height() || 400;
+			this.id = 'uniqueImageSliderID' + Guid.guid();
+			//this.id = "slider";
+            var primaryDiv = $('<div id="' + this.id + '"></div>');
+            var go = false;
+            
+            if (Object.isTrue(attributes.demo_mode)) {
+            	//Demo mode...just throw the demo images in there
+            	primaryDiv.append('<img src="images/image-slider-1.jpg" alt="">');
+    			primaryDiv.append('<img src="images/image-slider-2.jpg" alt="">');
+    			primaryDiv.append('<img src="images/image-slider-3.jpg" alt="">');
+    			primaryDiv.append('<img src="images/image-slider-4.jpg" alt="">');
+    			primaryDiv.append('<img src="images/image-slider-5.jpg" alt="">');
+    			primaryDiv.append('<img src="images/1.jpg" alt="">');
+    			primaryDiv.append('<img src="images/2.jpg" alt="">');
+    			primaryDiv.append('<img src="images/3.jpg" alt="">');
+    			primaryDiv.append('<img src="images/4.jpg" alt="">');
+    			go = true;
+    			
+            } else if (data.urls.length > 0) {
+            	//Go through the URLs provided and add them to the slider
+				for(var i = 0; i < data.urls.length; i++) {
+					var urlVar = data.urls[i];
+					var imgTag = '<img src="' + urlVar + '" alt="">';
+					primaryDiv.append(imgTag);
+				}
+				
+				go = true;
+            }
+            
+            if (Object.isTrue(go)) {
+				container.append(primaryDiv);
+                
+                this.slider = new IdealImageSlider.Slider({
+                	selector: '#' + this.id,
+                	height: 400, // Required but can be set by CSS
+                	interval: 4000
+                });
+                
+              	//this.slider.addBulletNav();
+              	//this.slider.addCaptions();
+                this.slider.start();
+                
+            } else {
+				primaryDiv.append(TRANSLATE('The %{label} bucket has no images to display', { label: data.label }));
+				container.append(primaryDiv);
+			}
+		},
+
+		onUnload: function() {
+		    if (!this.slider)
+		        return;
+
+			this.slider.destroy();
+			this.slider = undefined;
+		},
+
 		className: "ImageSliderClient"
 	});
 </script>

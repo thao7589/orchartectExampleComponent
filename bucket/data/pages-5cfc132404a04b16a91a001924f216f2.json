@@ -14,7 +14,6 @@
             "desktop": {
               "__start__": {
                 "contains": [
-                  "component_5cd3233c1605a217d35150058f74ea7e",
                   "component_4976cb4a1a1c4d5c0d77654581e801d1"
                 ],
                 "h": "100%",
@@ -39,26 +38,7 @@
                 "name": "component_4976cb4a1a1c4d5c0d77654581e801d1",
                 "needs_subpage_target": true,
                 "type": "component",
-                "w": "50%"
-              },
-              "component_5cd3233c1605a217d35150058f74ea7e": {
-                "attributes": {
-                  "bucket": "third_party_license",
-                  "component": "tree_bucket",
-                  "csstags": "",
-                  "dnd": "0",
-                  "instructions": "",
-                  "show_tree_lines": false,
-                  "tree_renderer": "jstree"
-                },
-                "component": "tree_bucket",
-                "h": "100%",
-                "id": "component_5cd3233c1605a217d35150058f74ea7e",
-                "name": "component_5cd3233c1605a217d35150058f74ea7e",
-                "needs_subpage_target": true,
-                "page_loading": false,
-                "type": "component",
-                "w": "50%"
+                "w": "100%"
               }
             }
           },
